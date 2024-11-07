@@ -1,0 +1,22 @@
+<!--防止键盘弹出影响布局-->
+
+
+<view  class="{{fixedInput ? 'message-chat' :''}}  fixed-input-show"
+  style="bottom:{{inputHeight}}px">
+  <input disabled="{{disable}}" name="{{inputName}}" maxlength="{{maxLength}}" type="{{inputType}}" name="{{inputName}}" model:value="{{inputValue}}" bindblur="blur"
+    focus="{{fixedInput}}" adjust-position="{{false}}" placeholder="{{inputPlaceholder}}" bindinput="bindinput"
+    bindfocus="focus" />
+  <button wx:if="{{fixedInput}}" bindtap="blur">确定</button>
+</view>
+<view class="{{'fixed-input-show'}}" wx:if="{{fixedInput}}">
+  <input disabled="{{disable}}"  maxlength="{{maxLength}}"  type="{{inputType}}" catchtouchstart="catchKey" name="{{inputName}}" 
+    value="{{inputValue}}" adjust-position="{{false}}" placeholder="{{inputPlaceholder}}" />
+</view>
+<!-- <view class="repair-textarea" wx:if="{{type == 'textarea'}}">
+    <textarea name="{{inputName}}" show-confirm-bar="{{false}}" disable-default-padding show-confirm-bar="{{false}}"
+      name="{{inputName}}" model:value="{{inputValue}}" adjust-position="{{false}}" bindfocus="focus"
+      placeholder="{{inputPlaceholder}}" maxlength="50"></textarea>
+  </view> -->
+<!-- <textarea name="{{inputName}}" adjust-position="{{false}}" show-confirm-bar="{{false}}" wx:if="{{type== 'textarea'}}"
+    name="{{inputName}}" model:value="{{inputValue}}" catchtouchstart="catchKey" bindblur="blur" focus="{{fixedInput}}"
+    placeholder="{{inputPlaceholder}}" bindinput="bindinput"></textarea> -->

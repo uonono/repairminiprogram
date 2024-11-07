@@ -1,0 +1,34 @@
+<Navbar page-name="选择人员" left-icon="back"></Navbar>
+<view class="out-view">
+  <form catchsubmit="cancelForm">
+    <view class="int-view">
+      <view class="repiar-phone">
+        <van-cell title="联系电话" border="{{ false }}" class="picker-title" clickable="{{false}}">
+        </van-cell>
+        <view class="repiar-phone-flex">
+          <input type="number" name="phone" maxlength="15" data-index="0" value="{{repiarPhone}}" placeholder="请输入联系人电话"
+          bind:input="onChange"
+            adjust-position="{{false}}" />
+          <button class="choose-phone" catchtap="getConcat">
+            <view class="button-text">
+              <image src="/images/concat.png"></image>
+              <text>通讯录</text>
+            </view>
+          </button>
+        </view>
+        <van-cell title="联系人员" border="{{ false }}" class="picker-title" clickable="{{false}} ">
+        </van-cell>
+        <view class="repiar-phone-flex">
+          <input type="text" name="name" maxlength="10" data-index="1" value="{{repiarName}}" placeholder="请输入联系人姓名"
+            adjust-position="{{false}}" />
+        </view>
+      </view>
+
+    </view>
+    <view class="map-button">
+      <button type="primary" formType="submit">确认</button>
+    </view>
+  </form>
+
+</view>
+<van-toast id="van-toast" />

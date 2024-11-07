@@ -1,0 +1,307 @@
+.repair-desc {
+  display: flex;
+  align-items: center;
+}
+
+.repair-desc text {
+  flex: 0 0 33.333%;
+  max-width: 33.333%;
+}
+
+.picker-title .picker {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #969799;
+  display: flex;
+  align-items: center;
+}
+.picker-title .van-icon{
+  margin-left: 10rpx;
+}
+.picker-title .van-icon-arrow:before{
+  font-size: 28rpx;
+}
+.picker-view {
+  flex: 1;
+}
+
+.picker-view {
+  display: flex;
+  align-items: center;
+}
+
+.picker-view icon {
+  margin-left: auto;
+}
+
+.picker-view .picker-text {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #969799;
+}
+
+.repair-textarea {
+  border-bottom: 2rpx solid #F5F6F8;
+  padding: 28rpx 0rpx;
+  margin-bottom: 34rpx;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.repair-textarea image{
+  width: 40rpx;
+  height: 45rpx;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.repair-textarea textarea {
+  background: #F5F6F8;
+  max-height: 210rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  line-height: 36rpx;
+  position: relative;
+  width: calc(100% - 28rpx);
+  padding: 26rpx 14rpx;
+  z-index: 0;
+}
+
+.repair-textarea button {
+  display: none;
+}
+
+.repair-video {
+  position: absolute;
+  right: 20rpx;
+  bottom: 20rpx;
+}
+
+.repair-media{
+  margin-bottom:34rpx;
+
+}
+.repair-media-photo {
+  margin-top: 34rpx;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.repair-media-photo image {
+  width: 30%;
+  flex: 0 0 30%;
+  height: 200rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+  object-fit: cover;
+}
+
+.repair-media-photo image:last-of-type {
+  margin-right: 0rpx;
+}
+
+.out-view {
+  padding: 30rpx 24rpx;
+}
+page{
+  background: #F2F2F2;
+}
+.int-view {
+  background: #fff;
+  padding: 40rpx 28rpx;
+}
+.repair-bottom .van-cell{
+  justify-content: flex-end;
+}
+.picker-title .van-cell {
+  padding: 0rpx !important;
+}
+.picker-title .van-cell__title {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #1F1F1F;
+  min-width: 30%;
+  margin-right: 30rpx;
+}
+
+.picker-title .van-cell__value {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #969799;
+}
+.repair-upload{
+  margin-top:34rpx;
+}
+.upload-view{
+  border-bottom:2rpx solid #F5F6F8;
+  padding-bottom:24rpx;
+}
+.repair-bottom-change .repair-bottom:last-child{
+  border-bottom:none;
+}
+.repair-last{
+  padding:0 !important;
+}
+.repair-bottom{
+  padding:34rpx 0rpx;
+  border-bottom:2rpx solid #F5F6F8;
+  display: block;
+}
+.map-button .disable {
+  background: #D8D8D8 !important;
+  box-shadow: 0rpx 4rpx 30rpx 0rpx rgba(168, 168, 168, 0.51) !important;
+  border-radius: 36rpx;
+}
+.map-button {
+  width: 100%;
+  margin-bottom: 32rpx;
+}
+
+.map-button button {
+  width: 90% !important;
+  background: linear-gradient(141deg, #1FD7A5 0%, #00B9A9 100%);
+  box-shadow: 0rpx 4rpx 30rpx 0rpx rgba(168, 168, 168, 0.51);
+  border-radius: 36rpx;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  color: #FFFFFF;
+  line-height: 42rpx;
+  padding: 22rpx 0rpx;
+  margin-top:38rpx;
+}
+.picker{
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.imagae-video{
+  width: 90rpx;
+  height: 90rpx;
+    right: 10rpx;
+    bottom: 40rpx;
+    z-index: 1;
+    position: absolute;
+}
+.repiar-phone-title .title {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+.repiar-phone input {
+  border: 1rpx solid #d8d8d8;
+  border-radius: 6rpx;
+}
+
+.repiar-contact {
+  padding: 30rpx;
+}
+
+.repiar-phone .choose-phone {
+  margin-left: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.out-view {
+  padding: 30rpx 24rpx;
+}
+
+.int-view {
+  background: #fff;
+  padding: 40rpx 28rpx;
+}
+
+.picker-title .van-cell {
+  padding: 0rpx !important;
+}
+
+.picker-title .van-cell__title {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #1F1F1F;
+  min-width: 30%;
+  margin-right: 30rpx;
+}
+
+.picker-title .van-cell__value {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #969799;
+}
+
+.repair-bottom {
+  padding: 34rpx 0rpx;
+  border-bottom: 2rpx solid #F5F6F8;
+  display: block;
+}
+
+.map-button .disable {
+  background: #D8D8D8 !important;
+  box-shadow: 0rpx 4rpx 30rpx 0rpx rgba(168, 168, 168, 0.51) !important;
+  border-radius: 36rpx;
+}
+
+.map-button {
+  width: 100%;
+  margin-bottom: 32rpx;
+}
+
+.map-button button {
+  width: 90% !important;
+  background: linear-gradient(141deg, #1FD7A5 0%, #00B9A9 100%);
+  box-shadow: 0rpx 4rpx 30rpx 0rpx rgba(168, 168, 168, 0.51);
+  border-radius: 36rpx;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  color: #FFFFFF;
+  line-height: 42rpx;
+  padding: 22rpx 0rpx;
+  margin-top: 38rpx;
+}
+
+.repiar-phone-flex {
+  display: flex;
+  align-items: center;
+  margin-top:28rpx;
+  padding-bottom:36rpx;
+  
+}
+.repiar-phone-flex inputcomponent{
+  flex:1
+}
+.repiar-phone-flex input {
+  background: #F5F6F8;
+  border: none;
+  padding: 26rpx 24rpx;
+  border-radius: 3px;
+  font-size: 28rpx;
+  flex: 1;
+}
+
+.choose-phone {
+  background: #04C6A6;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 24rpx;
+  padding: 18rpx 14rpx;
+}
+.repiar-phone .repiar-phone-flex:last-child{
+  border:none;
+}
+.button-text image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 12rpx;
+}
+.button-text{
+  display: flex;
+  align-items: center;
+
+}

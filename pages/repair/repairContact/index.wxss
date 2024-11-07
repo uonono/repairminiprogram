@@ -1,0 +1,119 @@
+page{
+  background: #F2F2F2;
+}
+.repiar-phone-title .title {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+.repiar-phone input {
+  border: 1rpx solid #d8d8d8;
+  border-radius: 6rpx;
+}
+
+.repiar-contact {
+  padding: 30rpx;
+}
+
+.repiar-phone .choose-phone {
+  margin-left: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.out-view {
+  padding: 30rpx 24rpx;
+}
+
+.int-view {
+  background: #fff;
+  padding: 40rpx 28rpx;
+}
+
+.picker-title .van-cell {
+  padding: 0rpx !important;
+}
+
+.picker-title .van-cell__title {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #1F1F1F;
+  min-width: 30%;
+  margin-right: 30rpx;
+}
+
+.picker-title .van-cell__value {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #969799;
+}
+
+.repair-bottom {
+  padding: 34rpx 0rpx;
+  border-bottom: 2rpx solid #F5F6F8;
+  display: block;
+}
+
+.map-button .disable {
+  background: #D8D8D8 !important;
+  box-shadow: 0rpx 4rpx 30rpx 0rpx rgba(168, 168, 168, 0.51) !important;
+  border-radius: 36rpx;
+}
+
+.map-button {
+  width: 100%;
+  margin-bottom: 32rpx;
+}
+
+.map-button button {
+  width: 90% !important;
+  background: linear-gradient(141deg, #1FD7A5 0%, #00B9A9 100%);
+  box-shadow: 0rpx 4rpx 30rpx 0rpx rgba(168, 168, 168, 0.51);
+  border-radius: 36rpx;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  color: #FFFFFF;
+  line-height: 42rpx;
+  padding: 22rpx 0rpx;
+  margin-top: 38rpx;
+}
+
+.repiar-phone-flex {
+  display: flex;
+  align-items: center;
+  margin-top:28rpx;
+  padding-bottom:36rpx;
+  border-bottom:2rpx solid #F5F6F8;
+}
+
+.repiar-phone-flex input {
+  background: #F5F6F8;
+  border: none;
+  padding: 26rpx 24rpx;
+  border-radius: 3px;
+  font-size: 28rpx;
+  flex: 1;
+}
+
+.choose-phone {
+  background: #04C6A6;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 24rpx;
+  padding: 18rpx 14rpx;
+}
+.repiar-phone .repiar-phone-flex:last-child{
+  border:none;
+}
+.button-text image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 12rpx;
+}
+.button-text{
+  display: flex;
+  align-items: center;
+
+}

@@ -1,0 +1,299 @@
+/* pages/my/profile/index.wxss */
+page {
+  background: #f2f2f2;
+  min-height: 100%;
+  height: auto;
+  position: relative;
+}
+
+.general-int-view {
+  margin-bottom: 24rpx;
+  display: block;
+  background: #fff;
+}
+
+.picker-title-last .van-cell {
+  padding: 30rpx 34rpx 40rpx 34rpx !important;
+}
+.header-chooise {
+  position: relative;
+  padding: 32rpx 28rpx 32rpx 74rpx;
+  font-weight: bold;
+  color: #414141;
+  font-family: PingFang SC;
+  background: #fff;
+  line-height: 36rpx;
+  font-size: 34rpx;
+  display: flex;
+  align-items: center;
+}
+
+.header-chooise text:first-of-type {
+  flex: 1;
+  margin-right: 20rpx;
+}
+
+.header-chooise text:last-of-type {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: normal;
+  color: #414141;
+  line-height: 36rpx;
+}
+
+.picker-title .van-cell {
+  padding: 36rpx 32rpx;
+  background: inherit;
+}
+
+.picker-title .van-cell__title {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #969799;
+  min-width: 80%;
+}
+.picker-address .van-cell{
+  padding: 0rpx 34rpx 40rpx 34rpx !important;
+}
+.picker-title .van-cell__value {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #04C6A6;
+}
+
+.general-out-view {
+  margin: 30rpx 24rpx;
+  border-radius: 12rpx;
+
+}
+.scan-icon {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.scan-icon image {
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.scan-icon text {
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #04C6A6;
+  line-height: 36rpx;
+}
+.door-accout{
+  display: flex;
+  align-items: center;
+}
+.door-accout input {
+  flex:1;
+  margin-right: 30rpx;
+}
+.general-block {
+  height: 165rpx;
+  display: block;
+}
+
+.general-out-view .picker-title image {
+  width: 84rpx;
+  height: 84rpx;
+  border-radius: 50%;
+}
+
+.picker-icon {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-size: 28rpx;
+  flex-wrap: wrap;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #969799;
+  justify-content: flex-end;
+  line-height: 36rpx;
+}
+
+.picker-text {
+  color: #04C6A6;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-size: 28rpx;
+  flex-wrap: wrap;
+  font-family: PingFang SC;
+  font-weight: 500;
+  justify-content: flex-end;
+  line-height: 36rpx;
+}
+
+.picker-icon .van-icon {
+  margin-left: 44rpx;
+}
+
+.picker-icon .van-icon:before {
+  font-size: 32rpx;
+}
+
+.map-button .disable {
+  background: #D8D8D8 !important;
+  box-shadow: 0rpx 4rpx 30rpx 0rpx rgba(168, 168, 168, 0.51) !important;
+  border-radius: 36rpx;
+}
+
+.map-button {
+  width: 100%;
+  margin-bottom: 32rpx;
+  position: absolute;
+  bottom: 38rpx;
+}
+
+.map-button button {
+  width: 90% !important;
+  background: linear-gradient(141deg, #1FD7A5 0%, #00B9A9 100%);
+  box-shadow: 0rpx 4rpx 30rpx 0rpx rgba(168, 168, 168, 0.51);
+  border-radius: 36rpx;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  color: #FFFFFF;
+  line-height: 42rpx;
+  padding: 22rpx 0rpx;
+}
+
+.solt-title {
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #1F1F1F;
+}
+
+.solt-title button {
+  background: #04C6A6;
+  border-radius: 6rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #FFFFFF;
+  line-height: 36rpx;
+  margin-left: 28rpx;
+  margin-right: 0;
+  padding: 6rpx 12rpx;
+}
+
+.solt-title .van-icon {
+  margin-left: 14rpx;
+}
+
+.solt-title .van-icon::before {
+  font-size: 34rpx;
+}
+
+.picker-icon .success {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #04C6A6;
+}
+
+.door-number {
+  padding: 0rpx 34rpx 32rpx 34rpx !important;
+}
+
+
+
+.door-number input {
+  background: #F5F6F8;
+  padding: 26rpx 22rpx;
+  margin-bottom: 18rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  line-height: 36rpx;
+}
+
+.door-number input::-webkit-input-placeholder {
+  color: #ADADAD;
+}
+
+.door-number .search-door {
+  padding: 12rpx 22rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #04C6A6;
+  line-height: 36rpx;
+  background: linear-gradient(141deg, rgba(31, 215, 165, 0.54) 0%, rgba(0, 185, 169, 0.54) 100%);
+  border-radius: 6rpx;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.door-number .search-door text {
+  flex: 1;
+}
+
+.door-number .search-door .van-icon::before {
+  font-size: 32rpx;
+}
+.tag-bottom button::after {
+  border-right: 2rpx solid !important;
+  border-radius: 0;
+  border:none;
+}
+
+.door-search {
+  border-top: 1rpx solid #e8e8e8;
+  padding-top: 10rpx;
+  display: flex;
+  align-items: center;
+  padding: 44rpx 50rpx;
+  border-bottom: 2rpx solid #e8e8e8;
+}
+
+.door-search:last-child {
+  border-bottom: none !important;
+}
+
+.door-search .door-left {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  flex: 1;
+}
+
+.door-search .door-left text:first-of-type {
+  margin-bottom: 16rpx;
+  color: #666;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #747474;
+  line-height: 36rpx;
+}
+
+.door-search .door-left text:last-of-type {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #414141;
+  line-height: 36rpx;
+}
+
+.door-search button {
+  background: #04C6A6;
+  border-radius: 6rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #FFFFFF;
+  line-height: 34rpx;
+  padding: 12rpx 24rpx;
+}

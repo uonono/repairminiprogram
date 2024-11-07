@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "AudioComponet":"/component/audio/audio",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-rate": "@vant/weapp/rate/index"
+  },
+  "navigationBarTitleText":"评价"
+}

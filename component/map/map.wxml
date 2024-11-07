@@ -1,0 +1,7 @@
+<!--component/map.wxml-->
+<view bind:touchend="bindTouchEnd" touchstart="bindClick">
+  <map id="map" class="map-view" style="top:0;"
+  enable-building bindmarkertap="onBindmarkertap" show-location="{{showLocation}}" markers="{{markers}}"
+  longitude="{{mapConfig.longitude}}" latitude="{{mapConfig.latitude}}" polyline="{{polyline}}" scale="{{scale}}" >
+</map>
+</view>

@@ -1,0 +1,74 @@
+/* pages/area/index.wxss */
+page {
+  background: #f2f2f2;
+}
+
+.area-view {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #767676;
+}
+
+.area-view .van-index-anchor {
+  padding: 11rpx 46rpx;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #767676;
+}
+
+.area-view .van-cell {
+  padding: 24rpx 46rpx;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #767676;
+}
+
+.area-view input {
+  margin: 30rpx 24rpx;
+  background: #fff;
+  padding: 16rpx 28rpx;
+  border-radius: 12rpx;
+  margin-bottom: 30rpx;
+}
+
+.phcolor {
+  color: #ADADAD;
+}
+
+.pos {
+  margin: 0rpx 26rpx 20rpx 26rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.pos text {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #767676;
+  margin-bottom: 26rpx;
+}
+
+.pos image {
+  width: 26rpx;
+  height: 32rpx;
+  margin-right: 14rpx;
+}
+
+.pos button {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #767676;
+  line-height: 36rpx;
+  padding: 18rpx 24rpx;
+  display: inline-block;
+  margin-left: 0 !important;
+  display: flex;
+  align-items: center;
+
+}

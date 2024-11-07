@@ -1,0 +1,28 @@
+<view class="video-popup">
+  <van-overlay show="{{maskShow}}" bind:click="closeMask">
+    <view class="mask-video" wx:if="{{isShowMask}}">
+      <view class="mask-content-video">
+        <image class="masker-images" src="/images/ic_record@2x.png"></image>
+        <view>
+          正在录音
+        </view>
+      </view>
+    </view>
+
+    <view class="mask-content">
+      <view class="total-title">长按录音</view>
+      <view class="video-bottom" bindtouchcancel="touchCancel" bindtouchstart="bindTouchStart"
+        bindtouchend="bindTouchEnd" bindlongpress="bingLongTap" bindtouchmove="bindTouchmove">
+        <view class="image-button">
+          <image class="image-imgs" src="/images/video.png"></image>
+        </view>
+      </view>
+    </view>
+  </van-overlay>
+  <!-- <van-popup show="{{maskShow}}" round position="bottom"  bindtap="closeMask" :style="{ height: '30%' }" >
+    
+  </van-popup> -->
+  <!-- <view class="audio-mask" bindtap="closeMask" wx:if="{{maskShow}}">
+ 
+  </view> -->
+</view>

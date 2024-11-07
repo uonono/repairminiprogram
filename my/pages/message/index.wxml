@@ -1,0 +1,11 @@
+<Navbar page-name="赵师傅" left-icon="back"></Navbar>
+<view class="general-out-view">
+  <view class="general-int-view">
+  </view>
+</view>
+<van-toast id="van-toast" />
+<view class="message-chat">
+  <image src="/images/message-audio.png"></image>
+  <input type="text" placeholder="请输入客户编号"/>
+  <button>确定</button>
+</view>

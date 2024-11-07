@@ -1,0 +1,9 @@
+/* pages/my/selDiagnosis/index.wxss */
+.diagnosis-img{
+  width: 100%;
+  height: 600vh;
+}
+.diagnosis-img image{
+  width: 100%;
+  height: 100%;
+}

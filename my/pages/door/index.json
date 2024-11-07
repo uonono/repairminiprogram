@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "Navbar":"/component/navbar/navbar",
+    "TagComponet":"/component/tag/tag",
+    "van-empty": "@vant/weapp/empty/index"
+  },
+  "navigationBarTitleText": "我的户号"
+}

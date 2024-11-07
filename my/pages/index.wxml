@@ -1,0 +1,49 @@
+<!--我的-->
+<Navbar page-name="我的" left-icon="fixedPath"></Navbar>
+<view class="my-view">
+  <van-cell border="{{ false }}" custom-class="van-hover" class="picker-title" clickable="{{false}}"
+    bind:click="cellClick" data-pickerIndex="0" data-type='profile'>
+    <view slot="title">
+      <view class="my-header">
+        <view class="my-header-img">
+          <image wx:if="{{avatar}}" src="{{avatar}}"></image>
+          <open-data wx:else type="userAvatarUrl"></open-data>
+        </view>
+        <view class="my-header-title">
+          <text class="title" wx:if="{{name}}">{{name}}</text>
+          <open-data wx:else type="userNickName"></open-data>
+          <text wx:if="{{phone}}">{{phone}}</text>
+          <text wx:else>未填写</text>
+        </view>
+        <van-icon class="arrow" name="arrow" />
+      </view>
+    </view>
+  </van-cell>
+  <view class="my-list arrow">
+    <view wx:for="{{myList}}" wx:key="index">
+      <van-cell border="{{ false }}" class="picker-title" clickable="{{false}}"
+        data-pickerIndex="0" data-type='{{item.type}}'>
+        <view slot="title">
+          <button class="my-list-li" wx:if="{{index !== 2}}" bindtap="routeLink" data-link="{{item.to}}">
+            <image src="{{item.src}}"></image>
+            <text>{{item.text}}</text>
+            <van-icon name="arrow" />
+          </button>
+          <button wx:if="{{index == 2}}" open-type="contact" class="my-list-li">
+            <image src="{{item.src}}"></image>
+            <text>{{item.text}}</text>
+            <van-icon  name="arrow" />
+          </button>
+        </view>
+      </van-cell>
+    </view>
+  </view>
+  <view class="my-diagnosis" bindtap="routeLink" data-link="/my/pages/selDiagnosis/index">
+    <image src="/images/home.png"></image>
+    <view class="flex">
+      <text>故障自行诊断</text>
+      <text>按提示自定排除故障</text>
+    </view>
+  </view>
+</view>
+<van-toast id="van-toast" />

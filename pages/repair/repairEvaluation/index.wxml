@@ -1,0 +1,33 @@
+<Navbar page-name="评价" left-icon="back"></Navbar>
+<view class="general-out-view">
+  <view class="general-int-view">
+    <van-cell title="服务态度" class="picker-title">
+      <van-rate readonly="{{type == 1}}" value="{{ value }}" :size="25" color="#ffd21e" void-icon="star"
+        void-color="#eee" bind:change="onChange" data-index="0" />
+    </van-cell>
+    <van-cell title="抢修及时" class="picker-title">
+      <van-rate readonly="{{type == 1}}" value="{{ valueTime }}" :size="25" color="#ffd21e" void-icon="star"
+        void-color="#eee" data-index="1" bind:change="onChange" />
+    </van-cell>
+    <van-cell class="picker-title" title="抢修人员" value="{{evalyationData[0].value}}">
+    </van-cell>
+    <!-- <van-cell class="picker-title" title="故障描述" value="{{evalyationData[1].value}}">
+    </van-cell>
+    <van-cell class="picker-title" title="处理时间" value="{{evalyationData[2].value}}">
+    </van-cell> -->
+    <view class=" repair-textarea">
+      <textarea disabled="{{type == 1}}" value="{{repairDesc}}" bind:input="inputChange" disable-default-padding
+        placeholder="请输入您的评价..." maxlength="240">
+        <view wx:if="{{type !== 1}}" class="imagae-video" catchtap="onAutio">
+        <image src="/images/voice-input.png"></image>
+      </view>
+      </textarea>
+    </view>
+  </view>
+</view>
+<view class="general-block"></view>
+<view class="map-button" wx:if="{{type == 0}}">
+  <button type="primary" bindtap="cancelForm">提交评价</button>
+</view>
+<van-toast id="van-toast" />
+<AudioComponet bindcloseMask="closeMask" maskShow="{{maskShow}}" bindgetVideo="getVideo"></AudioComponet>

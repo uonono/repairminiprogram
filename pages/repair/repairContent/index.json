@@ -1,0 +1,20 @@
+{
+  "usingComponents": {
+    "AudioComponet":"/component/audio/audio",
+    "van-uploader": "@vant/weapp/uploader/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-datetime-picker": "@vant/weapp/datetime-picker/index",
+    "van-popup":"@vant/weapp/popup",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-picker": "@vant/weapp/picker/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "Navbar":"/component/navbar/navbar",
+    "van-tree-select": "@vant/weapp/tree-select/index",
+    "van-switch": "@vant/weapp/switch/index",
+    "InputComponent":"/component/input/input"
+  },
+  "navigationStyle" : "custom",
+  "navigationBarTitleText":"故障信息"
+}

@@ -1,0 +1,80 @@
+<!--pages/repair/index.wxml-->
+<view class="repair-view">
+  <Navbar page-name="工单详情" left-icon="fixedPath" path="/my/pages/repair/index"></Navbar>
+  <view class="repair-all" style="height:calc(100vh - {{navHeight}}px)">
+    <view class="map-top">
+      <view class="map-top-title">
+        <view class="title header-top">
+          <view class="texts">工单编号：</view>
+          <text>{{dataList.id}}</text>
+        </view>
+        <view class="text" wx:if="{{hasArrive}}">
+          <text>预计到达时间</text>
+          <text>{{arrTime ? arrTime : ''}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="map-view">
+      <MapComponet mapId="map" historyLine="{{historyLine}}" domHeight="{{domHeight}}" markers="{{markers}}"
+        mapConfig="{{map}}"></MapComponet>
+    </view>
+    <view class="map-content">
+      <view class="pos-image">
+        <image bindtap="getLocation" src="/images/home-pos.png"></image>
+      </view>
+      <view class="map-detail-title" bindtap="callPhone" data-phone="{{dataList.workerPhone}}"
+        wx:if="{{dataList.workerName && dataList.workerName !== '' }}">
+        <image src="/images/qxry.png"></image>
+        <text>{{filter.getString(dataList.workerName)}}师傅</text>
+        <image data-phone="{{dataList.workerPhone}}" src="/images/phone.png"></image>
+      </view>
+      <view class="map-content-list">
+        <view class="map-content-form">
+          <view class="map-vtn-view">
+            <view class="map-btn" wx:for="{{mapIcon}}" wx:key="index" bindtap="goMessage" data-type="{{item.type}}" data-item="{{item}}">
+              <button open-type="share" wx:if="{{item.type == 'shark'}}">
+                <image src="{{item.icon}}"></image>
+                <text>{{item.text}}</text>
+              </button>
+              <block wx:else>
+                <image src="{{item.icon}}" style="{{item.type === 'cancel' ? 'transform: rotate(45deg);' : ''}}"></image>
+                <text>{{item.text}}</text>
+              </block>
+            </view>
+          </view>
+          <view class="map-order-step">
+            <van-collapse value="{{ activeNames }}" bind:change="onCollapse" border="{{false}}">
+              <van-collapse-item title="抢修进度" name="1" border="{{false}}">
+                <view class="order-step-list">
+                  <view class="order-step {{index <= arrvieIndex ? 'step-active':''}} " wx:for="{{step}}"
+                    wx:key="index">
+                    <view class="step-left {{index <= arrvieIcon ? 'icon' : ''}}">
+                      <view wx:if="{{index !== 4}}" class="order-line"></view>
+                      {{item.title}}
+                    </view>
+                    <view class="step-right">
+                      {{item.text}}
+                    </view>
+                  </view>
+                </view>
+              </van-collapse-item>
+            </van-collapse>
+            <!-- <text class="title">抢修进度</text>
+            <view class="order-step-list">
+              <view class="order-step {{index == 0 ? 'step-active':''}}" wx:for="{{step}}" wx:key="index">
+                <view class="step-left">
+                  <view wx:if="{{index !== 4}}" class="order-line"></view>
+                  {{item.title}}
+                </view>
+                <view class="step-right">
+                  {{item.text}}
+                </view>
+              </view>
+            </view> -->
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<wxs module="filter" src="./index.wxs"></wxs>

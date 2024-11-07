@@ -1,0 +1,142 @@
+/* pages/my/index.wxss */
+page {
+  background: #f2f2f2;
+}
+
+.my-header {
+  display: flex;
+  align-items: center;
+  padding: 48rpx 60rpx;
+}
+
+.my-header-img {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+
+.my-header-img image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+
+.my-header-title {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0 30rpx;
+  font-size: 40rpx;
+  font-family: PingFang SC;
+  font-weight: 800;
+  color: #414141;
+  line-height: 36rpx;
+}
+
+.my-header-title text:last-of-type {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #969799;
+  line-height: 36rpx;
+}
+
+.my-header-title .title {
+  margin-bottom: 16rpx;
+  font-size: 40rpx;
+}
+
+.my-header-title open-data {
+  margin-bottom: 16rpx;
+  font-size: 40rpx;
+}
+
+.my-list-li {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 34rpx 60rpx;
+  border: none !important;
+  font-size: 30rpx;
+  line-height: 36rpx !important;
+  background: #fff;
+}
+
+.my-list-li text {
+  flex: 1;
+  text-align: left;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+}
+
+.my-list-li::after {
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.my-list-li image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 22rpx;
+}
+
+.my-list {
+  padding: 30rpx 0rpx;
+  margin-top: 20rpx;
+}
+
+
+
+.picker-title .van-cell {
+  padding: 0rpx !important;
+}
+
+.picker-title .van-cell__title {
+  font-size: 36rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #1F1F1F;
+  min-width: 30%;
+}
+
+.picker-title .van-cell__value {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #969799;
+}
+
+.my-diagnosis {
+  padding: 32rpx 90rpx;
+  background: linear-gradient(-90deg, #1FD7A5 0%, #00B9A9 100%);
+  opacity: 0.97;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  margin: 100rpx 24rpx
+}
+
+.my-diagnosis image {
+  width: 110rpx;
+  height: 120rpx;
+  margin-right: 52rpx;
+}
+
+.my-diagnosis .flex {
+  display: flex;
+  flex-direction: column;
+  font-size: 40rpx;
+  font-family: PingFang SC;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 36rpx;
+}
+
+.my-diagnosis .flex text:last-of-type {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #FFFFFF;
+  line-height: 36rpx;
+  margin-top: 14rpx;
+}

@@ -1,0 +1,42 @@
+/* component/tag/tag.wxss */
+
+.tag-view {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  text-align: left;
+  border-top: 2rpx solid #e8e8e8;
+  padding: 44rpx 56rpx 0rpx 56rpx;
+}
+
+.tag-button {
+  min-width: 20%;
+  padding: 0rpx 15rpx;
+  text-align: center;
+}
+
+.tag-input{
+  margin: 0rpx 56rpx 40rpx 56rpx;
+  display: flex;
+}
+
+
+
+
+.tag-view .active {
+  color: #FFFFFF !important;
+
+  background: #04C6A6 !important;
+}
+
+.tag-bottom {
+  display: flex;
+  align-items: center;
+  border-top: 2rpx solid #e8e8e8;
+}
+
+.tag-calcam{
+  color: #04C6A6 !important;
+}
+

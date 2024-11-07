@@ -1,0 +1,88 @@
+/* components/navbar/index.wxss */
+
+.navbar {
+  width: 100%;
+  overflow: hidden;
+  z-index: 2020;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.navbar-views {
+  display: block;
+}
+
+.navbar-title {
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 230rpx;
+  padding-right: 230rpx;
+  height: 64rpx;
+  line-height: 60rpx;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  z-index: 10;
+  color: #fff;
+  font-size: 34rpx;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.navbar-action-wrap {
+  width: 64rpx;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  position: absolute;
+  left: 20rpx;
+  z-index: 11;
+  line-height: 1.5;
+}
+
+.navbar-action-group {
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+
+
+.navbar-action-group .last {
+  border-right: none;
+}
+
+.navbar-color {
+  background: linear-gradient(141deg, #1FD7A5 0%, #00B9A9 100%) !important;
+}
+
+.back-icon {
+  display: flex;
+  align-items: center;
+  height: 64rpx;
+  line-height: 1;
+  width: 100%;
+}
+
+.back-icon .van-icon-arrow-left:before {
+  font-size: 36rpx;
+  color: #fff;
+}
+
+.navbar-action_item {
+  background: #A5DBD1;
+  border-radius: 50%;
+  padding: 14rpx 14rpx;
+  width: 28rpx;
+  height: 28rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

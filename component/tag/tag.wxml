@@ -1,0 +1,22 @@
+<!--标签-->
+<van-action-sheet show="{{maskTag}}" z-index="{{1300}}" bind:close="closeTag" title="{{actionTitle}}"
+  close-on-click-action close-on-click-overlay="{{true}}" title="自定义标签" overlay="{{true}}">
+  <view class="tag-out-view">
+    <view class="tag-view">
+      <view class="tag-button" wx:for="{{tagItem}}" wx:key="index">
+        <button class="{{showIndex.id == item.id ? 'active' : ''}}" bindtap="clickTag" data-item="{{item}}">
+          {{item.tagName}}
+          <text catchtap="deteleTag" data-id="{{item.id}}">x</text>
+        </button>
+      </view>
+    </view>
+    <view class="tag-input">
+      <input type="text" value="{{tagValue}}" maxlength="10" placeholder="可添加10字符以内自定义标签" bindinput="inputChange"/>
+    <van-icon name="add-o" bindtap="addTag"/>
+    </view>
+    <view class="tag-bottom">
+      <button bindtap="closeTag">取消</button>
+      <button class="tag-calcam" bindtap="confirm" >确认</button>
+    </view>
+  </view>
+</van-action-sheet>

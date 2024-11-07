@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "Navbar":"/component/navbar/navbar",
+    "van-action-sheet": "@vant/weapp/action-sheet/index",
+    "TagComponet":"/component/tag/tag"
+  },
+  "navigationBarTitleText": "添加户号"
+}

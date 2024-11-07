@@ -1,0 +1,34 @@
+<Navbar page-name="我的" left-icon="back"></Navbar>
+<view class="general-out-view">
+  <view class="general-int-view">
+    <van-cell title="头像" class="picker-title" clickable="{{true}}" bind:click="cellClick" data-pickerIndex="0">
+      <block slot="right-icon">
+        <view class="picker-icon">
+          <image src="{{avatar}}"></image>
+          <van-icon name="arrow" />
+        </view>
+      </block>
+
+    </van-cell>
+    <van-cell title="姓名" class="picker-title" clickable="{{true}}" data-pickerIndex="1">
+      <block slot="right-icon">
+        <view class="picker-icon">
+          <van-field class="input-picker" value="{{name}}" placeholder="请填写名称" input-align="right" bind:input="ChangeInput" data-type="name"/>
+        </view>
+      </block>
+
+    </van-cell>
+    <van-cell border="{{ false }}" title="手机" class="picker-title"  bind:click="cellClick"
+      data-pickerIndex="2" >
+      <block slot="right-icon">
+        <view class="picker-icon">
+          <van-field type="number"  bind:input="ChangeInput" data-type="phone" class="input-picker" value="{{phone}}" placeholder="请输入手机号" input-align="right" />
+        </view>
+      </block>
+    </van-cell>
+  </view>
+</view>
+<view class="map-button">
+  <button type="primary" bindtap="cancelForm">提交</button>
+</view>
+<van-toast id="van-toast" />

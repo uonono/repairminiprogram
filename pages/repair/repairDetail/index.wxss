@@ -1,0 +1,553 @@
+/* pages/repair/index.wxss */
+navbar {
+  background: linear-gradient(141deg, #1FD7A5 0%, #00B9A9 100%) !important;
+}
+
+.repair-view {
+  width: 100%;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.map-view map {
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  height: 100%;
+}
+
+.map-content {
+  overflow: hidden;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  bottom: 0;
+  z-index: 1299;
+}
+
+.map-content-list {
+  width: 100%;
+}
+
+.map-content-form {
+  margin: 0rpx 22rpx;
+  border-radius: 12rpx 12rpx 0rpx 0rpx;
+  background: #fff;
+}
+
+.repair-all {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.map-button {
+  width: 100%;
+  background: #fff;
+  margin-bottom: 32rpx;
+}
+
+.map-button button {
+  width: 100% !important;
+  background: linear-gradient(141deg, #1FD7A5 0%, #00B9A9 100%);
+  box-shadow: 0rpx 4rpx 30rpx 0rpx rgba(168, 168, 168, 0.51);
+  border-radius: 36rpx;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  color: #FFFFFF;
+  line-height: 42rpx;
+  padding: 22rpx 0rpx;
+}
+
+.door-power {
+  margin-bottom: 28rpx;
+}
+
+.map-content-form .map-input input {
+  padding: 20rpx 28rpx 20rpx 28rpx;
+  background: #F5F6F8;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #414141;
+  line-height: 36rpx;
+}
+
+.map-content-form .map-input.address input::after {
+  content: '';
+  width: 16rpx;
+  height: 16rpx;
+  background: #04C6A6;
+  border-radius: 50%;
+  position: absolute;
+  left: 30rpx;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.map-content-form .map-input.address input {
+  position: relative;
+  padding: 32rpx 28rpx 32rpx 74rpx;
+  font-weight: bold;
+  color: #414141;
+  font-family: PingFang SC;
+  background: #fff;
+  line-height: 36rpx;
+  font-size: 34rpx;
+}
+
+.map-address {
+  padding-bottom: 28rpx;
+  border-bottom: 2rpx solid #F5F6F8;
+}
+
+.history-address {
+  padding: 24rpx 0rpx;
+  border-bottom: 1rpx solid #F5F6F8;
+}
+
+.history-address .title {
+  display: flex;
+  align-self: center;
+  padding: 0rpx 0rpx 28rpx 0rpx;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #414141;
+  line-height: 36rpx;
+}
+
+.history-address .title text:first-of-type {
+  flex: 1;
+}
+
+.history-address .title text:last-of-type {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #04C6A6;
+  line-height: 36rpx;
+}
+
+.history-address .content view {
+  text-align: center;
+  background: linear-gradient(141deg, rgba(31, 215, 165, 0.54) 0%, rgba(0, 185, 169, 0.54) 100%);
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #414141;
+  line-height: 36rpx;
+  border-radius: 10rpx;
+  padding: 22rpx 0rpx;
+  margin-bottom: 12rpx;
+}
+
+.map-scan-title {
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #d8d8d8;
+  padding-bottom: 20rpx;
+}
+
+.map-scan-title inputcomponent {
+  flex: 1;
+}
+
+.map-scan-title input {
+  flex: 1;
+  margin-right: 26rpx;
+  padding: 22rpx 24rpx;
+  border-radius: 3px;
+  background: #F5F6F8;
+}
+
+.map-scan {
+  border-bottom: 2rpx solid #F5F6F8;
+}
+
+.focus-input {
+  position: fixed;
+  border: 1rpx solid #e8e8e8;
+  width: 100%;
+  left: 0;
+  margin: 0 !important;
+}
+
+.door-search {
+  border-top: 1rpx solid #e8e8e8;
+  padding-top: 10rpx;
+  display: flex;
+  align-items: center;
+  padding: 44rpx 50rpx;
+  border-bottom: 2rpx solid #e8e8e8;
+}
+
+.door-search:last-child {
+  border-bottom: none !important;
+}
+
+.door-search .door-left {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  flex: 1;
+}
+
+.door-search .door-left text:first-of-type {
+  margin-bottom: 16rpx;
+  color: #666;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #747474;
+  line-height: 36rpx;
+}
+
+.door-search .door-left text:last-of-type {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #414141;
+  line-height: 36rpx;
+}
+
+.door-search button {
+  background: #04C6A6;
+  border-radius: 6rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #FFFFFF;
+  line-height: 34rpx;
+  padding: 12rpx 24rpx;
+}
+
+.map-scan .door {
+  text-align: left;
+  background: linear-gradient(141deg, rgba(31, 215, 165, 0.54) 0%, rgba(0, 185, 169, 0.54) 100%);
+  border-radius: 6rpx;
+  font-weight: 500;
+  font-size: 24rpx;
+  color: #04C6A6;
+  line-height: 36rpx;
+  margin: 0rpx 0rpx;
+  border-radius: 10rpx;
+  padding: 14rpx 24rpx;
+  margin-bottom: 26rpx;
+}
+
+.power-door {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #414141;
+  line-height: 36rpx;
+  background: rgba(255, 255, 255, 0.36);
+  border: 2rpx solid #04C6A6;
+  border-radius: 6px;
+  display: inline-block;
+  padding: 20rpx 24rpx;
+}
+
+.power-door text:last-of-type {
+  background: #04C6A6;
+  border-radius: 3px;
+  margin-left: 26rpx;
+  color: #fff !important;
+  font-size: 26rpx;
+  padding: 8rpx 12rpx;
+}
+
+.map-button .disable {
+  background: #D8D8D8 !important;
+  box-shadow: 0rpx 4rpx 30rpx 0rpx rgba(168, 168, 168, 0.51) !important;
+  border-radius: 36rpx;
+}
+
+.submit-list .picker-title:first-child .van-cell {
+  padding-top: 0 !important;
+}
+
+.submit-list .picker-title .van-cell::after {
+  left: 0;
+  right: 0;
+}
+
+.submit-list .picker-title:last-child .van-cell::after {
+  display: none !important;
+}
+
+.picker-title .van-cell {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 30rpx !important;
+}
+
+.picker-title .van-cell__title {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #1F1F1F;
+  min-width: 30%;
+  margin-right: 30rpx;
+}
+
+.picker-title.van-cell:after {
+  left: 0 !important;
+}
+
+.submit-content .map-button button {
+  margin: 100rpx 30rpx 32rpx 0rpx;
+  display: block;
+}
+
+.map-top {
+  position: absolute;
+  top: 0rpx;
+  width: 100%;
+  z-index: 1006;
+}
+
+.map-top-title {
+  background: #fff;
+  margin: 20rpx 24rpx;
+  border-radius: 6rpx;
+}
+.map-top-title .header-top{
+  display:flex;
+  align-items: flex-start;
+  border-bottom: 2rpx solid #F5F6F8;
+  padding: 26rpx;
+  flex-wrap: wrap;
+}
+.map-top-title .title text:first-of-type{
+  flex-shrink: 0;
+  flex: 0 0 auto !important;
+}
+.map-top-title .title text {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #1F1F1F;
+}
+.map-top-title .title .texts {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #1F1F1F;
+}
+.map-top-title .text {
+  padding: 26rpx;
+  display: flex;
+  align-items: center;
+}
+
+.map-top-title text:first-of-type {
+  flex: 1;
+}
+
+.map-top-title text {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #969799;
+}
+
+.map-detail-title {
+  box-shadow: 0rpx 6rpx 6rpx 0rpx rgba(183, 183, 183, 0.51);
+  border-radius: 12rpx;
+  background: #fff;
+  margin: 20rpx 22rpx;
+  padding: 16rpx 28rpx;
+  display: flex;
+  align-items: center;
+}
+
+.map-detail-title image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.map-detail-title image:first-of-type {
+  margin-right: 26rpx;
+}
+
+.map-detail-title text {
+  flex: 1;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #1F1F1F;
+}
+
+.map-vtn-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22rpx 0rpx;
+  border-bottom: 2rpx solid #F5F6F8;
+}
+
+.map-btn {
+  display: flex;
+  flex-direction: column;
+  font-size: 24rpx;
+  position: relative;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #969799;
+  line-height: 36rpx;
+  flex: 0 0 25%;
+  max-width: 25%;
+  text-align: center;
+  margin: 0 auto;
+}
+.map-btn::before{
+  content:'';
+  position: absolute;
+  height: 60%;
+  background:#F5F6F8;
+  right: 0;
+  width: 2rpx;
+  top: 50%;
+  transform:translateY(-50%)
+}
+.map-vtn-view .map-btn:last-child::before{
+  content: none !important;
+}
+.map-btn button {
+  display: flex;
+  flex-direction: column;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #969799;
+  line-height: 36rpx;
+  text-align: center;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.map-btn button::after {
+  content: none !important
+}
+
+.map-btn image {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0rpx auto 14rpx auto;
+
+}
+
+.map-order-step {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #414141;
+  line-height: 36rpx;
+}
+
+.order-step {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+
+}
+
+.step-active .step-left::before {
+  background: #04C6A6 !important;
+}
+
+.step-active .order-line {
+  background: #04C6A6 !important;
+}
+
+.step-left{
+  flex: 0 0 25%;
+  max-width: 25%;
+  padding-bottom: 50rpx;
+}
+.step-right {
+  flex: 0 0 70%;
+  max-width: 70%;
+  padding-bottom: 50rpx;
+}
+
+.step-left::before {
+  content: '';
+  width: 18rpx;
+  height: 18rpx;
+  border-radius: 50%;
+  background: #969799;
+  position: absolute;
+  z-index: 500;
+  right: -40rpx;
+  top: 10rpx;
+}
+
+.step-left {
+  text-align: right;
+  margin-right: 26rpx;
+  position: relative;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #414141;
+  line-height: 36rpx;
+}
+
+.step-right {
+  margin-left: 48rpx;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #969799;
+  line-height: 36rpx;
+}
+
+.order-line {
+  position: absolute;
+  width: 2rpx;
+  height: 100%;
+  background: #969799;
+  right: -32rpx;
+  top: 10rpx;
+}
+
+.order-step-list {
+  width: 100%;
+  margin-top: 44rpx;
+}
+
+.map-order-step .van-cell {
+  padding: 30rpx 28rpx !important;
+
+}
+
+.map-order-step .van-collapse-item__content {
+  padding: 0 !important;
+}
+
+.map-order-step .van-cell__title {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #1F1F1F;
+}
+
+.order-step .icon::before {
+  background: #04C6A6 !important;
+}
+
+.pos-image {
+  width: 100%;
+  display: flex;
+}
+
+.pos-image image {
+  width: 96rpx;
+  height: 96rpx;
+  margin: 0rpx 22rpx 26rpx auto;
+  cursor: pointer;
+}

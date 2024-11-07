@@ -1,0 +1,18 @@
+<Navbar page-name="选择地区" left-icon="back"></Navbar>
+<view class="area-view">
+  <input type="text" placeholder="输入省/直辖市查询" placeholder-class="phcolor"/>
+  <view class="pos">
+    <text>当前定位</text>
+    <button bind:click="cellClick" data-type="list" data-title="北京市">
+      <image src="/images/pos.png"></image>
+      北京市
+    </button>
+  </view>  
+  <van-index-bar sticky="{{false}}">
+    <view wx:for="{{areaList}}" wx:key="index">
+      <van-index-anchor index="{{item.initial}}" />
+        <van-cell data-title="{{item}}" title="{{item}}" wx:for="{{item.children}}" wx:key="item" bind:click="cellClick" data-type="list">
+        </van-cell>
+    </view>
+  </van-index-bar>
+</view>

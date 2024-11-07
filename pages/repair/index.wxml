@@ -1,0 +1,123 @@
+<!--pages/repair/index.wxml-->
+<view class="repair-view">
+  <Navbar page-name="故障报修"  leftIcon="{{navbarTitle}}"></Navbar>
+  <view class="repair-all" style="height:calc(100vh - {{navHeight}}px)">
+    <view class="map-view">
+      <MapComponet mapId="map" translate="{{translateArr}}" domHeight="{{domHeight}}" markers="{{markers}}"
+        mapConfig="{{map}}" showLocation="{{showLocation}}" hasCenter="{{hasCenter}}" bind:getCenter="getCenter"
+        scale="{{scale}}"></MapComponet>
+    </view>
+    <view class="map-content">
+      <view class="pos-image">
+        <image bindtap="getLocationSecond" src="/images/home-pos.png"></image>
+      </view>
+      <view class="has-order" wx:if="{{dataList && dataList.length > 0}}">
+        <text wx:if="dataList.length > 0">您有{{' ' +  dataList.length ? dataList.length : 0 + ' '}}个工单正在进行中</text>
+        <text class="look" bindtap="viewClick" data-item="{{dataList}}">查看</text>
+      </view>
+      <form catchsubmit="formSubmit" class="map-content-list" wx:if="{{!howConcel}}">
+        <view class="map-content-form {{hasDoors ? 'disable-input' : ''}}">
+          <view class="map-address">
+            <view class="map-input address">
+              <!-- <InputComponent inputName="address" input-value="{{address}}" bind:onblur='onPosition'
+                input-placeholder="请输入地址" bind:inputs="bindComponentInput" data-name="address"></InputComponent> -->
+              <view class="header-chooise" bindtap="getChooise">
+                <text>{{address == '' ? '请选择地址' : address}}</text>
+                <text class="chose-first" wx:if="{{!hasDoors}}">选择</text></view>
+            </view>
+            <view class="map-input">
+              <InputComponent disable="{{hasDoors}}" input-name="detailAddress" bind:onblur='onPosition'
+                input-value="{{detailAddress}}" input-placeholder="请输入详细地址（楼栋门牌号）" bind:inputs="bindComponentInput"
+                data-name="detailAddress">
+              </InputComponent>
+            </view>
+          </view>
+          <view class="map-scan">
+            <view class="map-scan-title">
+              <InputComponent disable="{{hasDoors}}" input-name="scan" input-value="{{scanValue}}"
+                input-placeholder="请输入户号" bind:inputs="bindComponentInput" data-name="scanValue" input-type="number">
+              </InputComponent>
+              <view class="scan-icon" bindtap="onScanCode">
+                <image src="/images/scan.png"></image>
+                <text>电表条码</text>
+              </view>
+            </view>
+            <!-- <button wx:if="{{!hasPhone}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">自动查询户号</button>
+            <view wx:else class="door" bindtap="getPicker" data-type="PowerDoor" data-source="automatic">自动查询户号</view> -->
+          </view>
+          <view class="history-address" wx:if="{{historyAddress &&historyAddress.length > 0}}">
+            <view class="title">
+              <text>历史报修地址</text>
+
+              <text class="more" bindtap="getPicker" data-type="historyAddress" data-source="more"
+                wx:if="{{historyAddress.length >1}}">更多</text>
+            </view>
+            <view class="content">
+              <block wx:for="{{historyAddress}}" wx:key="index">
+                <view bindtap="clickRouterTo" wx:if="{{index <= 0}}" data-item="{{item}}">
+                  {{item.addressContent ? item.addressContent : ''}}</view>
+              </block>
+            </view>
+          </view>
+          <view class="history-address door-power" wx:if="{{PowerDoor && PowerDoor.length > 0}}">
+            <view class="title">
+              <text>用电户号</text>
+              <text class="more" bindtap="getPicker" data-type="PowerDoor" data-source="add">添加</text>
+              <text class="more" bindtap="getPicker" data-type="PowerDoor" wx:if="{{PowerDoor.length > 2}}">更多</text>
+            </view>
+            <view class="door-view">
+              <view class="door" wx:for="{{PowerDoor}}" wx:key="index" bindtap="clickRouterTo" data-item="{{item}}"
+                data-type="PowerDoor" data-index="1">
+                <view class="power-door {{activeIndexDoor == item.id ? 'activePoor' : ''}}" wx:if="{{index <= 1}}">
+                  <text class="tag-title">*{{filter.getString(item.address)}}</text>
+                  <text class="tag" wx:if="{{item.tagName && item.tagName !== ''}}">{{item.tagName}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="map-button">
+            <!-- disabled class="disable" -->
+            <button class="{{hasDisable ? 'disable' : ''}}" disabled="{{hasDisable}}" type="primary"
+              formType="submit" >确认</button>
+          </view>
+        </view>
+      </form>
+      <view class="map-content-list submit-content">
+        <view wx:if="{{howConcel}}" class="map-content-form submit-list">
+          <van-cell border="{{index !==4}}" wx:for="{{submitData}}" title="{{item.title}}" value="{{item.text}}"
+            wx:key="index" class="picker-title" />
+          <view class="map-button">
+            <!-- disabled class="disable" -->
+            <button type="primary" bindtap="submitFormOrder">提交</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <van-action-sheet show="{{maskShow}}" z-index="{{1300}}" bind:close="closeDoor" title="{{actionTitle}}"
+    close-on-click-action close-on-click-overlay="{{true}}">
+    <view class="action-view">
+      <block wx:if="{{sheetType == 'PowerDoor'}}">
+        <view class="door-search" wx:for="{{PowerDoor}}" wx:key="index">
+          <view class="door-left">
+            <text wx:if="{{item.tagName && item.tagName !== ''}}">{{item.tagName}}</text>
+            <text>{{item.areaName + item.address}}</text>
+          </view>
+          <button size="mini" bindtap="clickRouterTo" data-index="2" data-type="PowerDoor"
+            data-item='{{item}}'>选择</button>
+        </view>
+      </block>
+      <block wx:if="{{sheetType == 'historyAddress'}}">
+        <view class="door-search" wx:for="{{historyAddress}}" wx:key="index">
+          <view class="door-left">
+            <text>{{ item.addressContent}}</text>
+          </view>
+          <button size="mini" bindtap="clickRouterTo" data-item='{{item}}'>选择</button>
+        </view>
+      </block>
+    </view>
+
+  </van-action-sheet>
+</view>
+<wxs module="filter" src="./index.wxs"></wxs>

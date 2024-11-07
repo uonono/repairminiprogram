@@ -1,0 +1,4 @@
+<Navbar page-name="自行诊断" left-icon="back"></Navbar>
+<view class="diagnosis-img">
+  <image  widthFix src="/images/selDiagnosis.jpg"></image>
+</view>

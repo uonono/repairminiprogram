@@ -1,0 +1,46 @@
+<Navbar page-name="我的户号" left-icon="fixedPath" path="/my/pages/index"></Navbar>
+<view class="general-out-view">
+  <block wx:if="{{dataList && dataList.length > 0}}">
+    <view class="general-int-view" wx:for="{{dataList}}" wx:key="index">
+      <van-cell class="picker-title ">
+        <view slot="title">
+          <view class="solt-title">
+            *{{filter.getString(item.address + item.detailAddress)}}
+            <button wx:if="{{item.tagName}}">{{item.tagName}}</button>
+            <button wx:else class="create" bindtap="createTag" data-item="{{item}}">+标签</button>
+            <van-icon name="edit" bindtap="updataDoor" data-type="edit" data-id="{{item.id}}" />
+          </view>
+        </view>
+        <block slot="right-icon">
+          <view class="picker-icon">
+            <van-icon name="delete-o" bindtap="deleteDoor" data-id="{{item.id}}"/>
+          </view>
+        </block>
+      </van-cell>
+      <van-cell title="户号：" class="picker-title" border="{{ false }}">
+        <block slot="right-icon">
+          <view class="picker-icon">
+            {{item.account}}
+          </view>
+        </block>
+      </van-cell>
+      <van-cell border="{{ false }}" class="picker-title picker-last-list" title="地址：">
+        <block slot="right-icon">
+          <view class="picker-icon">
+           {{item.address + item.detailAddress}}
+          </view>
+        </block>
+
+      </van-cell>
+    </view>
+  </block>
+  <block wx:else>
+    <van-empty description="暂无户号" />
+  </block>
+</view>
+<view class="fixed-image" bindtap="updataDoor" data-type="add">
+  <image src="/images/add.png"></image>
+</view>
+<van-toast id="van-toast" />
+<TagComponet maskTag="{{maskTag}}" bind:tagData="tagClick"></TagComponet>
+<wxs module="filter" src="./index.wxs"></wxs>

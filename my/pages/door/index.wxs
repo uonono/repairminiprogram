@@ -1,0 +1,14 @@
+var filter = {
+  //截取字符串
+  getString :function(string) {
+    if (string.length > 4) {
+      return (string.trim()).substring(string.length - 4, string.length)
+    } else {
+      return string
+    }
+  }
+}
+// 导出对外暴露的属性
+module.exports = {
+  getString: filter.getString
+}

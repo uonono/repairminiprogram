@@ -1,0 +1,94 @@
+/* component/inputKey/inputKey.wxss */
+.fixed-input{
+  background:#fff;
+  position: fixed;
+  width: 100%;
+  z-index: 1003;
+  left: 0;
+  overflow: hidden;
+}
+.fixed-input-show{
+  width: 100%;
+}
+.fixed-input input{
+  background:#F5F6F8;
+  margin: 0 !important;
+  width: calc(100% - 40rpx);
+}
+.fixed-input textarea{
+  background:#fff;
+  margin: 0 !important;
+  margin:0rpx 20rpx;
+  width: calc(100% - 40rpx);
+}
+.message-chat {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index:1008;
+}
+
+.message-chat image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+}
+.message-chat textarea{
+  background: #F5F6F8 !important;
+  border-radius: 6rpx;
+  padding: 20rpx !important;
+  font-size: 28rpx !important;
+  font-weight: normal !important;
+  font-family: PingFang SC;
+  line-height: 36rpx !important;
+  margin: 26rpx 0rpx 26rpx 26rpx !important;
+  flex: 1;
+  height: 40rpx;
+}
+.message-chat input {
+  background: #F5F6F8 !important;
+  border-radius: 6rpx;
+  padding: 20rpx !important;
+  font-size: 28rpx !important;
+  font-weight: normal !important;
+  font-family: PingFang SC;
+  line-height: 36rpx !important;
+  margin: 26rpx 0rpx 26rpx 26rpx !important;
+  flex: 1;
+}
+.message-chat input:after{
+  content:none !important;
+}
+
+.message-chat button {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  padding: 16rpx 38rpx;
+  font-weight: bold;
+  color: #FFFFFF;
+  line-height: 40rpx;
+  background: #04C6A6;
+  border-radius: 6rpx;
+  margin: 0rpx 18rpx;
+}
+.repair-textarea {
+  display: block;
+  width: 100%;
+}
+
+.repair-textarea textarea {
+  padding: 26rpx 24rpx;
+  background: #F5F6F8;
+  height: 180rpx !important;
+  background: #F5F6F8;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: normal;
+  color: #414141;
+  line-height: 36rpx;
+}

@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "Navbar":"/component/navbar/navbar",
+    "van-toast": "@vant/weapp/toast/index"
+  },
+  "navigationStyle" : "custom",
+  "navigationBarTitleText":"选择人员"
+}

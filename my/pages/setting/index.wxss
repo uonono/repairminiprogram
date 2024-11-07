@@ -1,0 +1,18 @@
+/* pages/my/setting/index.wxss */
+.my-setting{
+  background:#e8e8e8;
+  min-height:100vh;
+  padding:24rpx 0rpx;
+}
+.setting-list{
+  display: flex;
+  align-items: center;
+  margin:24rpx;
+  background:#fff;
+  padding:30rpx;
+  border-radius: 12rpx;
+}
+.setting-list text:first-of-type{
+  color: #999;
+  flex: 1;
+}

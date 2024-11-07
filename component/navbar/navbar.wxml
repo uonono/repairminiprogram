@@ -1,0 +1,19 @@
+<view class="navbar custom-class {{navbarColor}}" style='height:{{navHeight}}px;background-color:{{bgColor}}'>
+  <view wx:if="{{showNav}}" class="navbar-action-wrap navbar-action-group row item-center" style='top:{{navTop}}px;'>
+    <view wx:if="{{leftIcon == 'home'}}" name="back" color="{{iconColor}}" size="15px" block="{{true}}"
+      class="navbar-action_item" bindtap="navBack" data-type="my">
+      <!-- <text wx:if="{{hasUserInfo}}" bindtap="getLogin">点击登录</text> -->
+      <image src="/images/wode.png"></image>
+    </view>
+    <view wx:if="{{leftIcon == 'back'}}" class="back-icon" bindtap="navBack" data-type="back">
+      <van-icon name="arrow-left" />
+    </view>
+    <view wx:if="{{leftIcon == 'fixedPath'}}" class="back-icon" bindtap="navBack" data-type="fixedPath" data-path="{{path}}">
+      <van-icon name="arrow-left" />
+    </view>
+  </view>
+  <view class='navbar-title' style='top:{{navTop}}px'>
+    {{pageName}}
+  </view>
+</view>
+<view class="navbar-views" style="height:{{navHeight}}px"></view>

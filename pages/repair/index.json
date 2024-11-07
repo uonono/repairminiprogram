@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "MapComponet":"/component/map/map",
+    "Navbar":"/component/navbar/navbar",
+    "InputComponent":"/component/input/input",
+    "van-action-sheet": "@vant/weapp/action-sheet/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index"
+  },
+  "navigationBarBackgroundColor":"#333333",
+  "navigationBarTitleText":"故障报修",
+  "navigationBarTextStyle":"white",
+  "navigationStyle" : "custom"
+}

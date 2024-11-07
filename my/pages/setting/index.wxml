@@ -1,0 +1,7 @@
+<Navbar page-name="设置" left-icon="back"></Navbar>
+<view class="my-setting">
+  <view class="setting-list">
+    <text>版本号</text>
+    <text>V0.1</text>
+  </view>  
+</view>

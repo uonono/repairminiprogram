@@ -1,0 +1,110 @@
+<Navbar page-name="故障信息" left-icon="back"></Navbar>
+<view class="out-view">
+  <view class="int-view">
+    <van-cell title="故障描述" border="{{ false }}" custom-class="van-hover" class="picker-title" clickable="{{false}}"
+      bind:click="cellClick" data-pickerIndex="0">
+      <view slot="right-icon">
+        <view class="picker">
+          {{repairPickerValue ? repairPickerValue : '选择故障描述'}}
+          <van-icon name="arrow" />
+        </view>
+      </view>
+    </van-cell>
+    <view class="repair-textarea">
+      <textarea value="{{repairDesc}}" bind:input="inputChange" disable-default-padding placeholder="请输入详细故障描述（非必填）"
+        maxlength="240"></textarea>
+      <view class="imagae-video" catchtap="onAutio">
+        <image src="/images/voice-input.png"></image>
+      </view>
+    </view>
+    <view class="repair-media">
+      <van-cell title="照片/视频" border="{{ false }}" class="picker-title" value="最多上传9张" />
+      <!-- <view class="repair-media-photo">
+      <image wx:for="{{chooseImgArr}}" src="{{item}}" wx:key="index"></image>
+      <image wx:if="{{chooseImgArr.length <= 8}}" bindtap="chooseMedia"
+        src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fyouimg1.c-ctrip.com%2Ftarget%2Ftg%2F035%2F063%2F726%2F3ea4031f045945e1843ae5156749d64c.jpg&refer=http%3A%2F%2Fyouimg1.c-ctrip.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1620522362&t=f23fb8262a2fada93655bcbd0ebfc4d0">
+      </image>
+    </view> -->
+    </view>
+    <view class="upload-view">
+      <van-uploader class="repair-upload" file-list="{{ fileList }}" bind:after-read="afterRead" max-count="9"
+        accept="media" deletable="{{ true }}" multiple bind:delete="deleteImg" />
+    </view>
+    <view class="repair-bottom-change">
+      <van-cell title="上门时间" border="{{ false }}" class="picker-title repair-bottom" bind:click="cellClick"
+        data-pickerIndex="1">
+        <view slot="right-icon">
+          <view class="picker">
+            {{showCurrentDate}}
+            <van-icon name="arrow" />
+          </view>
+        </view>
+      </van-cell>
+      <van-cell title="代他人报修" border="{{ false }}" class="picker-title repair-bottom"
+        style="border-bottom:2rpx solid #F5F6F8;margin-bottom:30rpx">
+        <view slot="right-icon">
+          <view class="picker">
+            <van-switch size="17px" checked="{{ checked }}" bind:change="onChangeSwitch" active-color="#00B9A9" />
+          </view>
+        </view>
+      </van-cell>
+      <!-- <van-cell wx:if="{{checked}}" border="{{ false }}" class="repair-last picker-title repair-bottom"
+        bind:click="cellClick" data-pickerIndex="2">
+        <view slot="right-icon">
+          <view class="picker">
+            {{otherName}} {{otherPhone}}
+            <van-icon name="arrow" />
+          </view>
+        </view>
+      </van-cell> -->
+      <view class="repiar-phone">
+        <van-cell title="联系人员" border="{{ false }}" class="picker-title" clickable="{{false}} ">
+        </van-cell>
+        <view class="repiar-phone-flex">
+          <InputComponent input-name="otherName" input-value="{{otherName}}" input-placeholder="请输入联系人姓名"
+            bind:inputs="onChangeConcat" data-name="otherName" data-index="1" maxLength="18">
+          </InputComponent>
+          <!-- <input type="text" name="name" maxlength="15" data-index="1" value="{{otherName}}" placeholder="请输入联系人姓名"
+            adjust-position="{{false}}" /> -->
+        </view>
+        <van-cell title="联系电话" border="{{ false }}" class="picker-title" clickable="{{false}}">
+        </van-cell>
+        <view class="repiar-phone-flex">
+          <InputComponent input-name="otherPhone" maxLength="18" input-value="{{otherPhone}}"
+            input-placeholder="请输入联系人电话" bind:inputs="onChangeConcat" data-name="otherPhone" input-type="number"
+            data-index="0">
+          </InputComponent>
+          <!-- <input type="number" name="phone" maxlength="15" data-index="0" value="{{otherPhone}}" placeholder="请输入联系人电话"
+            bind:input="onChange" adjust-position="{{false}}" /> -->
+          <button class="choose-phone" catchtap="getConcat">
+            <view class="button-text">
+              <image src="/images/concat.png"></image>
+              <text>通讯录</text>
+            </view>
+          </button>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view class="map-button">
+    <button type="primary" bindtap="cancelForm">确认</button>
+  </view>
+</view>
+<AudioComponet bindcloseMask="closeMask" maskShow="{{maskShow}}" bindgetVideo="getVideo"></AudioComponet>
+<!-- 选择预约时间 -->
+<van-popup zIndex="{{1000}}" show="{{maskTimeShow}}" bind:click-overlay="confirmTime" round position="bottom"
+  :style="{ height: '10%' }">
+  <!-- <van-datetime-picker type="datetime" bind:cancel="maskTimeHide" bind:confirm="confirmTime" value="{{ currentDate }}"
+    min-date="{{ minDate }}" title="选择预约时间" formatter="{{ formatter }}" bind:input="onInput" /> -->
+  <!-- <van-tree-select title="选择上门时间" items="{{ timeItem }}" main-active-index="{{ mainActiveIndex }}"
+    active-id="{{ activeId }}" bind:click-nav="onClickNav" bind:click-item="onClickItem" /> -->
+  <van-picker title="选择上门时间" columns="{{ columns }}" bind:change="onChange" bind:confirm="onConfirm" show-toolbar
+    bind:cancel="confirmTime" showButton="{{true}}" visible-item-count="{{3}}" />
+</van-popup>
+<van-toast id="van-toast" />
+<!-- 故障描述选择 -->
+<van-popup show="{{maskPickerShow}}" round position="bottom" bind:click-overlay="onPickerClose">
+  <van-picker show-toolbar columns="{{ repairPicker }}" bind:cancel="onPickerClose" bind:confirm="onPickerChange"
+    title="选择故障描述" />
+</van-popup>

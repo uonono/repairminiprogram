@@ -1,0 +1,94 @@
+<Navbar page-name="{{navTitle}}" left-icon="back"></Navbar>
+<view class="general-out-view">
+  <!-- 缴费单位 -->
+  <view class="general-int-view">
+    <van-cell class=" picker-title-first picker-title" border="{{ false }}" title="地址">
+    </van-cell>
+    <van-cell class=" picker-address picker-title" border="{{ false }}" bindtap="getChooise" data-type="tag">
+      <view slot="title">
+        <view class="solt-title">
+          {{address == '' ? '请选择地址' : address}}
+        </view>
+      </view>
+      <block slot="right-icon">
+        <view class="picker-icon">
+          <van-icon name="arrow" />
+        </view>
+      </block>
+    </van-cell>
+    <view class="door-number">
+      <input maxlength="30" bind:input="changeInput" model:value="{{addressValue}}" type="text"
+        placeholder="请输入详细地址（楼栋门牌号）" data-index="0" />
+    </view>
+    <!-- <van-cell class="picker-title-last picker-title" border="{{ false }}" bind:click="cellClick" data-type="area">
+      <view slot="title">
+        <view class="solt-title">
+          {{areaTitle}}
+        </view>
+      </view>
+      <block slot="right-icon">
+        <view class="picker-icon">
+          <van-icon name="arrow" />
+        </view>
+      </block>
+    </van-cell> -->
+  </view>
+  <!-- 客户编号 -->
+  <view class="general-int-view">
+    <van-cell class=" picker-title-first picker-title" border="{{ false }}" title="户号">
+      <block slot="right-icon">
+        <!-- <view class="picker-text">
+          如何获取户号？
+        </view> -->
+      </block>
+    </van-cell>
+    <view class="door-number door-accout">
+      <input maxlength="50" bind:input="changeInput" value="{{payValue}}" type="number" placeholder="请输入户号"
+        data-index="1" />
+        <view class="scan-icon" bindtap="onScanCode">
+                <image src="/images/scan.png"></image>
+                <text>电表条码</text>
+              </view>
+      <!-- <view class="search-door" bindtap="cellClick" data-type="door">
+        <text>自动查询户号</text>
+        <van-icon name="arrow" />
+      </view> -->
+    </view>
+  </view>
+  <!-- 标签 -->
+  <view class="general-int-view">
+    <van-cell class=" picker-title-first picker-title" border="{{ false }}" title="标签">
+    </van-cell>
+    <van-cell class="picker-title-last picker-title" border="{{ false }}" bind:click="cellClick" data-type="tag">
+      <view slot="title">
+        <view class="solt-title">
+          {{tagList.tagName}}
+        </view>
+      </view>
+      <block slot="right-icon">
+        <view class="picker-icon">
+          <van-icon name="arrow" />
+        </view>
+      </block>
+    </van-cell>
+  </view>
+</view>
+<view class="general-block"></view>
+<view class="map-button">
+  <button type="primary" bindtap="cancelForm">{{formButton}}</button>
+</view>
+<van-toast id="van-toast" />
+<van-action-sheet show="{{maskShow}}" z-index="{{1300}}" bind:close="closeDoor" title="{{actionTitle}}"
+  close-on-click-action close-on-click-overlay="{{true}}">
+  <block>
+    <view class="door-search" wx:for="{{PowerDoor}}" wx:key="index">
+      <view class="door-left">
+        <text>{{item.address}}</text>
+        <text>{{item.detail}}</text>
+      </view>
+      <button size="mini" bindtap="changeDoor" data-list="{{item.address}}">选择</button>
+    </view>
+  </block>
+
+</van-action-sheet>
+<TagComponet maskTag="{{maskTag}}" bind:tagData="tagClick"></TagComponet>
