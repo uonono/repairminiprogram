@@ -477,7 +477,7 @@ cancelOrder() {
     //   })
     // } else 
     if (type == 'evaluation') {
-      let urls = '/pages/repair/repairEvaluation/index?data=' + this.data.dataList.mRID + '&status=' + item.status
+      let urls = '/pages/repair/repairEvaluation/index?data=' + this.data.dataList.id + '&status=' + item.status
       wx.navigateTo({
         url: urls,
       })

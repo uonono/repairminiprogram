@@ -62,7 +62,7 @@ export function getOrderId(id) {
 //保存评价接口
 export function getOrderEvaluation(data) {
   return request({
-    url: '/bx/order/evaluate/create',
+    url: '/bx/faultOrder/evaluate/create',
     method: 'post',
     data
   })
