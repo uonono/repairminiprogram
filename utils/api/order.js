@@ -38,6 +38,20 @@ export function cancelOrder(id) {
     method: 'post'
   })
 }
+// 获取接单表接口
+export function getRepairRecords() {
+  return request({
+    url: '/bx/repairRecords/list',
+    method: 'get'
+  })
+}
+// 根据ID获取特定接单记录
+export function getRepairRecordById(id) {
+  return request({
+    url: `/bx/repairRecords/get/${id}`,
+    method: 'get'
+  })
+}
 //工单详情查询接口
 export function getOrderId(id) {
   return request({

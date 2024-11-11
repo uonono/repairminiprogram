@@ -36,14 +36,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options,12313132132131)
     if (options && options.data) {
       console.log(options, 'aaa')
       this.getInit(options.data)
-      if (options.status == 1) {
+      if (options.status > 6) {
         this.getOrderDetail(options.data)
       }
       this.setData({
-        type: options.status ? options.status : 0
+        type: options.status > 6  ? options.status : 0
       })
     }
   },

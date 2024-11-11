@@ -24,10 +24,10 @@
             <text class="success" wx:if="{{item.procCode == 3}}">已接单</text>
             <text class="success" wx:if="{{item.procCode == 4}}">已到达</text>
             <text class="success" wx:if="{{item.procCode == 5}}">已勘查</text>
-            <text class="success" wx:if="{{item.procCode == 6 && item.isEvaluate == 0}}">已处理</text>
-            <text class="success" wx:if="{{item.procCode == 7 && item.isEvaluate == 1}}">已评价</text>
-            <text class="success" wx:if="{{ item.procCode == 8 && item.isEvaluate == 0}}">已处理</text>
-            <text class="success" wx:if="{{item.procCode == 8 && item.isEvaluate == 1}}">已评价</text>
+            <text class="success" wx:if="{{item.procCode == 6}}">已处理</text>
+            <text class="success" wx:if="{{item.procCode == 7}}">已评价</text>
+            <text class="success" wx:if="{{ item.procCode == 8}}">已完成</text>
+            <!-- <text class="success" wx:if="{{item.procCode == 8 && item.isReviewed == 1}}">已评价</text> -->
           </view>
         </block>
       </van-cell>

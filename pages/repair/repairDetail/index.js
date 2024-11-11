@@ -6,7 +6,8 @@ import Utils from '../../../utils/util'
 import {
   getOrderId,
   workerLocation,
-  cancelOrder
+  cancelOrder,
+  getRepairRecordById
 } from '../../../utils/api/order';
 Page({
 
@@ -217,11 +218,17 @@ Page({
         })
         this.getLocalpeople()
         if (res.data.procCode !== undefined && res.data.procCode !== null) {
-          this.getTimeStatus(res.data.procCode, res.data)
-          this.getStatusIndex(res.data.procCode, res.data.isEvaluate)
+          let procCode = res.data.procCode 
+          getRepairRecordById(id).then(res => {
+            //获取工单状态
+            this.getTimeStatus(procCode, res.data)
+          }).catch(err => {
+            console.log(err)
+         })
+          this.getStatusIndex(res.data.procCode, res.data.isReviewed)
           //当工单已处理且未评价时
           let index = parseInt(res.data.procCode)
-          if (index >= 6 && res.data.isEvaluate == 0) {
+          if (index == 6) {
             let {
               mapIcon
             } = this.data
@@ -229,13 +236,13 @@ Page({
               icon: '/images/detail/rale.png',
               text: '服务评价',
               type: 'evaluation',
-              status: res.data.isEvaluate
+              status: res.data.procCode
             }
             mapIcon.splice(0, 1, service)
             this.setData({
               mapIcon: mapIcon
             })
-          } else if (index >= 6 && res.data.isEvaluate == 1) {
+          } else if (index >= 6 && res.data.procCode > 6) {
             let {
               mapIcon
             } = this.data
@@ -243,7 +250,7 @@ Page({
               icon: '/images/detail/rale.png',
               text: '查看评价',
               type: 'evaluation',
-              status: res.data.isEvaluate
+              status: res.data.procCode
             }
             mapIcon.splice(0, 1, service)
             this.setData({
@@ -382,7 +389,7 @@ Page({
         })
         break;
       case "06":
-        if (evaluate == 1) {
+        if (status > 6) {
           step[4].title = '已评价'
           this.setData({
             arrvieIndex: 4,
@@ -403,7 +410,7 @@ Page({
         })
         break;
       case "08":
-        if (evaluate == 1) {
+        if (status > 6) {
           step[4].title = '已评价'
           this.setData({
             arrvieIndex: 4,
@@ -490,11 +497,11 @@ cancelOrder() {
       worderCallout
     } = this.data
     let index = parseInt(status)
-    step[2].text = data.surveyTime ? data.surveyTime : ''
-    step[3].text = data.dealWithTime ? data.dealWithTime : ''
-    step[0].text = data.orderTime ? data.orderTime : ''
+    step[2].text = data.surveyTime ? Utils.formatDuringTime(data.surveyTime) : ''
+    step[3].text = data.dealWithTime ? Utils.formatDuringTime(data.dealWithTime) : ''
+    step[0].text = data.receiveTime ? Utils.formatDuringTime(data.receiveTime) : ''
     if (index >= 4) {
-      step[1].text = data.arriveTime ? data.arriveTime : ''
+      step[1].text = data.arriveTime ? Utils.formatDuringTime(data.arriveTime) : ''
       this.setData({
         hasArrive: false,
         step: step,
