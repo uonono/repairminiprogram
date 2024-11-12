@@ -358,37 +358,37 @@ Page({
       step: step
     })
     switch (status) {
-      case "01":
+      case 1:
         this.setData({
           arrvieIndex: -1,
           arrvieIcon: -1
         })
         break;
-      case "02":
+      case 2:
         this.setData({
           arrvieIndex: -1,
           arrvieIcon: -1
         })
         break;
-      case "03":
+      case 3:
         this.setData({
           arrvieIndex: 0,
           arrvieIcon: 1
         })
         break;
-      case "04":
+      case 4:
         this.setData({
           arrvieIndex: 1,
           arrvieIcon: 2
         })
         break;
-      case "05":
+      case 5:
         this.setData({
           arrvieIndex: 2,
           arrvieIcon: 3
         })
         break;
-      case "06":
+      case 7:
         if (status > 6) {
           step[4].title = '已评价'
           this.setData({
@@ -500,6 +500,7 @@ cancelOrder() {
     step[2].text = data.surveyTime ? Utils.formatDuringTime(data.surveyTime) : ''
     step[3].text = data.dealWithTime ? Utils.formatDuringTime(data.dealWithTime) : ''
     step[0].text = data.receiveTime ? Utils.formatDuringTime(data.receiveTime) : ''
+    step[4].text = data.createdAt ? Utils.formatDuringTime(data.createdAt) : ''
     if (index >= 4) {
       step[1].text = data.arriveTime ? Utils.formatDuringTime(data.arriveTime) : ''
       this.setData({

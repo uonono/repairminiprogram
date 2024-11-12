@@ -55,7 +55,7 @@
             <view class="content">
               <block wx:for="{{historyAddress}}" wx:key="index">
                 <view bindtap="clickRouterTo" wx:if="{{index <= 0}}" data-item="{{item}}">
-                  {{item.addressContent ? item.addressContent : ''}}</view>
+                  {{item.address ? item.address : ''}}</view>
               </block>
             </view>
           </view>
@@ -69,7 +69,7 @@
               <view class="door" wx:for="{{PowerDoor}}" wx:key="index" bindtap="clickRouterTo" data-item="{{item}}"
                 data-type="PowerDoor" data-index="1">
                 <view class="power-door {{activeIndexDoor == item.id ? 'activePoor' : ''}}" wx:if="{{index <= 1}}">
-                  <text class="tag-title">*{{filter.getString(item.address)}}</text>
+                  <text class="tag-title">*{{filter.getString(item.account)}}</text>
                   <text class="tag" wx:if="{{item.tagName && item.tagName !== ''}}">{{item.tagName}}</text>
                 </view>
               </view>
@@ -102,7 +102,7 @@
         <view class="door-search" wx:for="{{PowerDoor}}" wx:key="index">
           <view class="door-left">
             <text wx:if="{{item.tagName && item.tagName !== ''}}">{{item.tagName}}</text>
-            <text>{{item.areaName + item.address}}</text>
+            <text>{{item.address + item.detailAddress}}</text>
           </view>
           <button size="mini" bindtap="clickRouterTo" data-index="2" data-type="PowerDoor"
             data-item='{{item}}'>选择</button>
@@ -111,7 +111,7 @@
       <block wx:if="{{sheetType == 'historyAddress'}}">
         <view class="door-search" wx:for="{{historyAddress}}" wx:key="index">
           <view class="door-left">
-            <text>{{ item.addressContent}}</text>
+            <text>{{ item.address}}</text>
           </view>
           <button size="mini" bindtap="clickRouterTo" data-item='{{item}}'>选择</button>
         </view>

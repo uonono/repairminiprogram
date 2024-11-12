@@ -104,9 +104,9 @@ Page({
     getOrderEvaluationDetail(id).then(res => {
       if (res.isok) {
         this.setData({
-          value: res.data.attitudeScore ? res.data.attitudeScore : '',
-          valueTime: res.data.timelyScore ? res.data.timelyScore : '',
-          repairDesc: res.data.content
+          value: res.data.serviceAttitude ? res.data.serviceAttitude : '',
+          valueTime: res.data.repairTimeliness ? res.data.repairTimeliness : '',
+          repairDesc: res.data.comments
         })
       }
     }).catch(err => {

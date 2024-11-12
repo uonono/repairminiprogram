@@ -11,7 +11,7 @@ export function getDoor() {
 //历史报修地址列表
 export function gethistoryAddress() {
   return request({
-    url: '/bx/order/addressHistory/list',
+    url: '/bx/faultOrder/addressHistory/list',
     method: 'get',
   })
 }
@@ -77,7 +77,7 @@ export function workerLocation(id) {
 //评价查询接口
 export function getOrderEvaluationDetail(id) {
   return request({
-    url: `/bx/order/evaluate/get/item/${id}`,
+    url: `/bx/faultOrder/evaluate/get/item/${id}`,
     method: 'get'
   })
 }

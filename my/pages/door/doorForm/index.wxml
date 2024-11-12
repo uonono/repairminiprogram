@@ -62,7 +62,7 @@
     <van-cell class="picker-title-last picker-title" border="{{ false }}" bind:click="cellClick" data-type="tag">
       <view slot="title">
         <view class="solt-title">
-          {{tagList.tagName}}
+          {{ tagList.tagName || '' }}
         </view>
       </view>
       <block slot="right-icon">

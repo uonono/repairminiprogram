@@ -31,7 +31,7 @@
       <view class="map-content-list">
         <view class="map-content-form">
           <view class="map-vtn-view">
-            <view class="map-btn" wx:for="{{mapIcon}}" wx:key="index" bindtap="goMessage" data-type="{{item.type}}" data-item="{{item}}">
+            <view wx:if="{{!(dataList.procCode >4 && item.type === 'cancel')}}" class="map-btn" wx:for="{{mapIcon}}" wx:key="index" bindtap="goMessage" data-type="{{item.type}}" data-item="{{item}}">
               <button open-type="share" wx:if="{{item.type == 'shark'}}">
                 <image src="{{item.icon}}"></image>
                 <text>{{item.text}}</text>

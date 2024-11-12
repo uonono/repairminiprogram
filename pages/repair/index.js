@@ -165,7 +165,7 @@ Page({
         console.log(res, 'res')
         let arr = []
         res.data.map((item, index) => {
-          if (item.procCode !== '08') {
+          if (item.procCode !== 7) {
             arr.push(item)
           }
         })
@@ -183,9 +183,9 @@ Page({
   //户号查询
   getDoorList() {
     getDoor().then(res => {
-      if (res) {
+      if (res.isok) {
         this.setData({
-          PowerDoor: res
+          PowerDoor: res.data
         })
       };
     }).catch(err => {
@@ -195,7 +195,7 @@ Page({
   //历史地址
   getHistoryAddress() {
     gethistoryAddress().then(res => {
-      if (res) {
+      if (res.isok) {
         this.setData({
           historyAddress: res.data
         })
@@ -670,11 +670,15 @@ Page({
     let index = e.currentTarget.dataset.index
     console.log(item)
     let data = {
-      addressAreaName: item.areaName,
-      address: item.areaName + (item.address || item.addressContent),
+      addressAreaName: item.address,
+      address: item.address + (item.detailAddress || item.detailAddress),
       longitude: item.longitude,
       latitude: item.latitude,
       account: item.account ? item.account : ''
+    }
+    if (typeof type === 'undefined') {
+      data.addressAreaName=item.addressAreaName
+      data.address=item.address
     }
     let datas = JSON.stringify(data)
 
@@ -694,8 +698,8 @@ Page({
           activeIndexDoor: item.id,
           hasDoors: true,
           PowerData: data,
-          address: item.areaName,
-          detailAddress: item.address,
+          address: item.address,
+          detailAddress: item.detailAddress,
           scanValue: item.account
         })
       }
