@@ -98,20 +98,36 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let that=this
     if (options && options.id) {
       this.getOrderInit(options.id) //初始化数据
-      this.getWorder(options.id) //初始化获取维修工位置
-      this.setData({
-        mrid: options.id,
-        timer: setInterval(() => {
-          this.getWorder(this.data.mrid)
-          console.log('定时器')
-        }, 5000),
-        timerUser: setInterval(() => {
-          this.getOrderInit(this.data.mrid)
-        }, 30000)
-      })
-
+      // this.getWorder(options.id) //初始化获取维修工位置
+      getOrderId(options.id).then(res => {
+        console.log(res,11111111111)
+        this.setData({
+          dataList: res.data,
+          mrid : res.data.id
+        })
+        that.dataList = res.data
+        // 获取工单数据之后，检查工单状态
+        if (that.dataList.procCode === 3) {
+          // 工单已接单，开始获取工人位置
+          this.setData({
+            mrid: options.id,
+            timer: setInterval(() => {
+              this.getWorder(this.data.mrid);
+              console.log('定时器 - 获取工人位置');
+            }, 5000),
+            timerUser: setInterval(() => {
+              this.getOrderInit(this.data.mrid); // 继续获取工单信息
+            }, 30000)
+          });
+        } else {
+          console.log('工单尚未接单，无法获取工人位置');
+        }
+      }).catch(error => {
+        console.error('初始化数据失败', error);
+      });
     }
     this.setData({
       navHeight: app.globalData.navHeight
@@ -141,7 +157,8 @@ Page({
 
   },
   onShow: function () {
-    this.getOrderInit(this.data.mrid)
+    console.log(this.dataList)
+    // this.getOrderInit(this.data.mrid)
     //根据标签页面情况弹框
     let _this = this;
     //添加
@@ -219,12 +236,14 @@ Page({
         this.getLocalpeople()
         if (res.data.procCode !== undefined && res.data.procCode !== null) {
           let procCode = res.data.procCode 
-          getRepairRecordById(id).then(res => {
-            //获取工单状态
-            this.getTimeStatus(procCode, res.data)
-          }).catch(err => {
-            console.log(err)
-         })
+          if(procCode >= 3){
+            getRepairRecordById(id).then(res => {
+              //获取工单状态
+              this.getTimeStatus(procCode, res.data)
+            }).catch(err => {
+              console.log(err)
+           })
+          }
           this.getStatusIndex(res.data.procCode, res.data.isReviewed)
           //当工单已处理且未评价时
           let index = parseInt(res.data.procCode)
@@ -536,7 +555,7 @@ cancelOrder() {
       width: '56rpx',
       height: '114rpx',
       callout: {
-        content: this.data.dataList.cause,
+        content: this.data.dataList.content,
         fontSize: 16,
         anchorY: -10,
         display: 'ALWAYS',
@@ -545,6 +564,7 @@ cancelOrder() {
     }]
     //如果有抢修师傅经纬度
     if (data) {
+      debugger
       if (markerArr[1]) {
         markerArr[1].latitude = data.latitude
         markerArr[1].longitude = data.longitude
