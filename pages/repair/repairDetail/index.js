@@ -110,7 +110,7 @@ Page({
         })
         that.dataList = res.data
         // 获取工单数据之后，检查工单状态
-        if (that.dataList.procCode === 3) {
+        if (that.dataList.procCode >= 3) {
           // 工单已接单，开始获取工人位置
           this.setData({
             mrid: options.id,
@@ -294,11 +294,11 @@ Page({
         let newTime = null
         //此处获取起始点
         res.data.map((item, index) => {
-          item.submit_time.replace(new RegExp("-", "gm"), "/")
-          arr.push((new Date(item.submit_time)).getTime())
+          // item.submitTime.replace(new RegExp("-", "gm"), "/")
+          arr.push((new Date(item.submitTime)).getTime())
           //获取最大值
           const max = Math.max(arr)
-          if (max == (new Date(item.submit_time)).getTime()) {
+          if (max == (new Date(item.submitTime)).getTime()) {
             newTime = item
           }
         })
@@ -306,16 +306,16 @@ Page({
         let pointArr = []
         let oldTime = null;
         res.data.map((item, index) => {
-          item.submit_time.replace(new RegExp("-", "gm"), "/")
-          item.submit_time = (new Date(item.submit_time)).getTime()
+          // item.submitTime.replace(new RegExp("-", "gm"), "/")
+          item.submitTime = (new Date(item.submitTime)).getTime()
           pointArr.push(item)
         })
         pointArr.sort((a, b) => {
-          a.submit_time > b.submit_time ? 1 : -1
+          a.submitTime > b.submitTime ? 1 : -1
         })
         pointArr.map((item, index) => {
           //删除最后时间坐标
-          delete item.submit_time
+          delete item.submitTime
         })
         oldTime = [...pointArr].pop()
         console.log(oldTime, 'abc')
@@ -564,7 +564,7 @@ cancelOrder() {
     }]
     //如果有抢修师傅经纬度
     if (data) {
-      debugger
+      // debugger
       if (markerArr[1]) {
         markerArr[1].latitude = data.latitude
         markerArr[1].longitude = data.longitude
